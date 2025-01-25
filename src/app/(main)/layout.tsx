@@ -22,7 +22,9 @@ export const metadata = {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+      <body
+        className={cn('h-screen w-screen bg-background font-sans antialiased', fontSans.variable)}
+      >
         {children}
       </body>
     </html>
