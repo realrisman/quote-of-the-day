@@ -4,27 +4,15 @@ import { useState } from 'react'
 import { Quote } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-const QuoteDisplay = () => {
-  const [quote, setQuote] = useState({
-    text: 'Laughter is the best medicine, but the Joke Tax is the worst prescription.',
-    author: 'Jokester, Court Jester',
-  })
+type QuoteDisplayProps = {
+  quotes: {
+    text: string
+    author: string | null | undefined
+  }[]
+}
 
-  const quotes = [
-    {
-      text: 'Laughter is the best medicine, but the Joke Tax is the worst prescription.',
-      author: 'Jokester, Court Jester',
-    },
-    {
-      text: 'To err is human; to admit it, superhuman.',
-      author: 'Doug Larson',
-    },
-    {
-      text: 'The only mystery in life is why the kamikaze pilots wore helmets.',
-      author: 'Al McGuire',
-    },
-    // Add more quotes as desired
-  ]
+const QuoteDisplay = ({ quotes }: QuoteDisplayProps) => {
+  const [quote, setQuote] = useState(quotes[0])
 
   const getAnotherQuote = () => {
     const randomIndex = Math.floor(Math.random() * quotes.length)
