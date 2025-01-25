@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 
 import { cn } from '@/lib/utils'
 import { Inter as FontSans } from 'next/font/google'
+import Favicon from './favicon.ico'
 
 import '@/styles/global.css'
 
@@ -17,6 +18,7 @@ const fontSans = FontSans({
 export const metadata = {
   title: 'Quote of the day',
   description: 'Find your purpose',
+  icons: [{ rel: 'icon', url: Favicon.src }],
 }
 
 const Layout = ({ children }: LayoutProps) => {
